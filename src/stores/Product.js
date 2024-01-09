@@ -2,12 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 const initialState = {
   productList: [],
-  productCategoryList:[]
+  productCategoryList: [],
   // loan: 0,
   // loanPurpose: "",
   // isLoading: false,
 };
 
+// base_url = http://ecommerce-env.eba-pbznkncw.ap-south-1.elasticbeanstalk.com/api/products
 const productSlice = createSlice({
   name: "product",
   initialState,
@@ -28,7 +29,9 @@ export const { loadProductsList, loadProductCategoryList } =
 export function loadProducts() {
   console.log("first");
   return async function fetchProductList(dispatch) {
-    const result = await axios.get("http://localhost:8080/api/products");
+    const result = await axios.get(
+      "http://ecommerce-env.eba-pbznkncw.ap-south-1.elasticbeanstalk.com/api/products"
+    );
     const response = result.data._embedded.products;
     console.log("second");
     dispatch({ type: "product/loadProductsList", payload: response });
@@ -41,7 +44,7 @@ export function loadProductCategory(id) {
   console.log(id);
   return async function fetchProductLists(dispatch) {
     const result = await axios.get(
-      `http://localhost:8080/api/products/search/findByCategoryId?id=${id}`
+      `http://ecommerce-env.eba-pbznkncw.ap-south-1.elasticbeanstalk.com/api/products/search/findByCategoryId?id=${id}`
     );
     const response = result.data._embedded.products;
     dispatch({ type: "product/loadProductCategoryList", payload: response });
