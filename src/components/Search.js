@@ -6,7 +6,9 @@ function Search() {
         type="text"
         placeholder="Search Product"
       />
-      <button class="button is-primary mt-1 ml-2 search-button">Search</button>
+      <button class="button is-primary mt-1 ml-2 search-button">
+        Search In
+      </button>
     </div>
   );
 }
