@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import ProductCard from "./ProductCard";
 import { useDispatch, useSelector } from "react-redux";
-import { loadProducts, loadProductCategory } from "../stores/Product";
+import { loadProductCategory } from "../stores/Product";
 
 function ProductCategory() {
   const dispatch = useDispatch();
@@ -11,11 +11,13 @@ function ProductCategory() {
 
   const { id } = useParams();
   // console.log(id);
+
   useEffect(
     function () {
       dispatch(loadProductCategory(id));
       console.log(productCategoryList);
     },
+    // eslint-disable-next-line
     [id]
   );
 

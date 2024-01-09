@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// eslint-disable-next-line
 import Navbar from "./components/Navbar";
 import Body from "./main-components/Body";
 

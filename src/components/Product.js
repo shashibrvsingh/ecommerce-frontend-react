@@ -1,19 +1,20 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+// import { useParams } from "react-router-dom";
 
 import ProductCard from "./ProductCard";
 import { useDispatch, useSelector } from "react-redux";
-import { loadProducts, loadProductCategory } from "../stores/Product";
+import { loadProducts } from "../stores/Product";
 
 function Product() {
   const dispatch = useDispatch();
   const { productList } = useSelector((store) => store.product);
 
-  const { id } = useParams();
+  // const { id } = useParams();
   // console.log(id);
   useEffect(function () {
     dispatch(loadProducts());
     console.log(productList);
+    // eslint-disable-next-line
   }, []);
 
   // useEffect(

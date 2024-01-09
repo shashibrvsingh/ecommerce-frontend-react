@@ -1,5 +1,5 @@
 import Search from "./Search";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <div class="has-background-danger-light p-2">
@@ -23,10 +23,10 @@ function Navbar() {
             <div class="navbar-end">
               <div class="navbar-item">
                 <div class="buttons">
-                  <a class="button is-primary">
+                  <button class="button is-primary">
                     <strong>Sign up</strong>
-                  </a>
-                  <a class="button is-light">Log in</a>
+                  </button>
+                  <button class="button is-light">Log in</button>
                 </div>
               </div>
             </div>
