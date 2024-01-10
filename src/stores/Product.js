@@ -30,7 +30,7 @@ export function loadProducts() {
   console.log("first");
   return async function fetchProductList(dispatch) {
     const result = await axios.get(
-      "http://ecommerce-env.eba-pbznkncw.ap-south-1.elasticbeanstalk.com/api/products"
+      "http://ecommerce-env.eba-pbznkncw.ap-south-1.elasticbeanstalk.com:5000/api/products"
     );
     const response = result.data._embedded.products;
     console.log("second");
@@ -44,7 +44,7 @@ export function loadProductCategory(id) {
   console.log(id);
   return async function fetchProductLists(dispatch) {
     const result = await axios.get(
-      `http://ecommerce-env.eba-pbznkncw.ap-south-1.elasticbeanstalk.com/api/products/search/findByCategoryId?id=${id}`
+      `http://ecommerce-env.eba-pbznkncw.ap-south-1.elasticbeanstalk.com:5000/api/products/search/findByCategoryId?id=${id}`
     );
     const response = result.data._embedded.products;
     dispatch({ type: "product/loadProductCategoryList", payload: response });
